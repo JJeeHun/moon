@@ -1,4 +1,10 @@
 @import "tailwindcss";
+@font-face {
+  font-family: 'DAEHWA_Bold';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2502-1@1.0/DAEHWA_Bold.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+}
 
 :root {
   --background: #ffffff;
@@ -12,7 +18,7 @@
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: DAEHWA_Bold, Arial, Helvetica, sans-serif;
 }
 
 .container {
