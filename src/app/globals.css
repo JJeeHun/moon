@@ -3,24 +3,45 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-}
+  --color-sub-text: #979797;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  @theme {
+    --color-primary: #52EE52FF;
+    --color-sub-text: var(--color-sub-text);
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.main-bg {
+  @apply bg-no-repeat bg-cover bg-[url(https://static.wixstatic.com/media/fc4f7e_f7540b842df74ff5b298598ed36cf34b~mv2.png/v1/fill/w_2198,h_2640,al_c,q_95,usm_0.66_1.00_0.01,enc_avif,quality_auto/fc4f7e_f7540b842df74ff5b298598ed36cf34b~mv2.png)]
+}
+
+.overlay {
+  @apply absolute top-0 left-0 right-0 bottom-0 bg-[#00000080] pointer-events-none z-0
+}
+
+.active {
+  @apply text-white
+}
+
+input, textarea {
+  @apply border border-[var(--color-sub-text)] rounded-xl
+  w-full focus:ring-1 outline-none focus:outline-none
+  bg-[#1E2028] text-xl
+}
+
+input {
+  @apply min-h-[50px] py-[3px] pl-[16px]
+}
+
+textarea {
+  @apply min-h-[160px] py-[3px] px-[16px]
 }
